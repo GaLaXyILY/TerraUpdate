@@ -15,9 +15,9 @@ on:
         required: true  
         default: 'warning'
   push:  
-    branches: [ "main" ]  
+    branches: [ "1.21dev" ]  
   pull_request:  
-    branches: [ "main" ] 
+    branches: [ "1.21dev" ] 
 
 
 jobs:
