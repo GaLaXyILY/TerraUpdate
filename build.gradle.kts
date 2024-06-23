@@ -37,7 +37,13 @@ allprojects {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 }
-
+ tasks.shadowJar {
+        if (arrayListOf("plugin", "api").contains(project.name)) {
+            destinationDirectory.set(file("$rootDir/target"))
+        }
+        archiveClassifier.set("")
+        archiveFileName.set("CustomCrops-" + project.name + "-" + project.version + ".jar")
+    }
 afterEvaluate {
     forImmediateSubProjects(":platforms") {
         configureDistribution()
